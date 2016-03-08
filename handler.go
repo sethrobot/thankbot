@@ -4,7 +4,6 @@ import (
 	"encoding/json"
 	"fmt"
 	"net/http"
-	"net/url"
 
 	"github.com/ChimeraCoder/anaconda"
 	"github.com/mrjones/oauth"
@@ -49,19 +48,19 @@ func (h *handler) callback(w http.ResponseWriter, r *http.Request) error {
 	if err := h.storage.SetAccessToken(w, accessToken); err != nil {
 		return err
 	}
-	http.Redirect(w, r, redirectURL(r, "/me"), http.StatusTemporaryRedirect)
+	http.Redirect(w, r, redirectURL(r, "/followers"), http.StatusTemporaryRedirect)
 	return nil
 }
 
-func (h *handler) me(w http.ResponseWriter, r *http.Request) error {
+func (h *handler) followers(w http.ResponseWriter, r *http.Request) error {
 	token, err := h.storage.GetAccessToken(r)
 	if err != nil {
 		return err
 	}
-	api := anaconda.NewTwitterApi(token.Token, token.Secret)
-	user, err := api.GetSelf(url.Values{})
+	twitterAPI := &api{anaconda.NewTwitterApi(token.Token, token.Secret)}
+	response, err := twitterAPI.earliestFollowers(3)
 	if err != nil {
 		return err
 	}
-	return json.NewEncoder(w).Encode(user)
+	return json.NewEncoder(w).Encode(response)
 }

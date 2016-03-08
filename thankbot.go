@@ -44,8 +44,8 @@ func main() {
 	r := mux.NewRouter()
 	r.HandleFunc("/login", catchError(h.login)).Methods("GET")
 	r.HandleFunc("/callback", catchError(h.callback)).Methods("GET")
-	r.HandleFunc("/me", catchError(h.me)).Methods("GET")
+	r.HandleFunc("/followers", catchError(h.followers)).Methods("GET")
 	r.PathPrefix("/").Handler(http.FileServer(http.Dir("static"))).Methods("GET")
-	log.Println("Listening on :3000")
+	log.Printf("Listening on %s", os.Getenv("SERVER_BINDING"))
 	http.ListenAndServe(os.Getenv("SERVER_BINDING"), r)
 }
