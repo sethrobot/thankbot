@@ -2,8 +2,46 @@
 <html>
   <head>
     <title>ThankBot</title>
+    <link rel='stylesheet' href='/stylesheet/normalize.css'>
+    <link rel='stylesheet' href='/stylesheet/style.css'>
+    <meta content="initial-scale=1.0, user-scalable=no, maximum-scale=1, width=device-width, minimal-ui" name="viewport">
   </head>
   <body>
-    <p><a href="/login">Log in with Twitter</a></p>
+    <div class='b-layout b-wrapper'>
+
+      <aside class='layout-element-left'>
+        <img class='img-left-text' src='./images/aside-left.png' alt='left-text'>
+        <img class='img-city-name' src='./images/san-francisco.png' alt='city-name'>
+      </aside>
+
+      <section class='layout-element-middle'>
+        <header>
+          <img class='img-thank-bot' src='./images/thank-bot.png' alt='thank-bot'>
+        </header>
+
+        <article class='b-landing'>
+          <img class='img-landing-text' src='./images/landing-text.png' alt='landing-text'>
+          <a class='btn sign-in-btn' href='/login'>
+            <img src='./images/sign-in.png' alt='sign-in'>
+          </a>
+          <div class='elements-container'>
+            <div class='element-right'>
+              <a class='btn twitter-follow-btn' href='#'>
+                <img src='./images/follow.png' alt='follow'>
+              </a>
+            </div>
+            <div class='element-left'>
+              <img class='logo' src='./images/logo.png' alt='logo'>
+            </div>
+          </div>
+        </article>
+      </section>
+
+      <aside class='layout-element-right'>
+        <img class='img-right-text' src='./images/aside-right.png' alt='right-text'>
+        <img class='img-city-name' src='./images/california.png' alt='city-name'>
+      </aside>
+
+    </div>
   </body>
 </html>

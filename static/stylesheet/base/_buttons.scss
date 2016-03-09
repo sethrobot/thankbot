@@ -1,0 +1,35 @@
+.btn {
+  @include size(252px, 50px);
+  display: block;
+  margin: 0 auto 25px;
+
+  &:hover {
+    @include filter(brightness(70%));
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .twitter-follow-btn {
+    margin: 0;
+  }
+
+  .sign-in-btn {
+    margin-bottom: 10px;
+    width: 220px;
+  }
+
+  .twitter-follow-btn {
+    @include size(100%, 20px);
+  }
+}
+
+@media only screen and (min-width: 1278px) {
+  .sign-in-btn {
+    @include size(356px, 63px);
+    margin-bottom: 44px;
+  }
+
+  .twitter-follow-btn {
+    height: 40px;
+  }
+}
