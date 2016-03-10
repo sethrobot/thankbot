@@ -48,7 +48,7 @@ func (h *handler) callback(w http.ResponseWriter, r *http.Request) error {
 	if err := h.storage.SetAccessToken(w, accessToken); err != nil {
 		return err
 	}
-	http.Redirect(w, r, redirectURL(r, "/followers"), http.StatusTemporaryRedirect)
+	http.Redirect(w, r, redirectURL(r, "/"), http.StatusTemporaryRedirect)
 	return nil
 }
 
