@@ -24,3 +24,7 @@ _testmain.go
 *.exe
 *.test
 *.prof
+
+/.sass-cache
+*style.css.map
+

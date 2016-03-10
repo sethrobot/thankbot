@@ -1,0 +1,17 @@
+.b-wrapper {
+  padding: 42px 20px;
+  margin: 0 auto;
+}
+
+@media only screen and (min-width: 768px) {
+  .b-wrapper {
+    max-width: 997px;
+    padding: 42px 58px;
+  }
+}
+
+@media only screen and (min-width: 1278px) {
+  .b-wrapper {
+    max-width: 1248px;
+  }
+}

@@ -1,0 +1,26 @@
+@mixin filter($filter) {
+  -webkit-filter: $filter;
+  filter: $filter;
+}
+
+@mixin flex-align-items($alignment) {
+  -webkit-align-items: $alignment;
+  align-items: $alignment;
+}
+
+@mixin flex-flow($direction, $wrap) {
+  -ms-flex-direction: $direction;
+  -ms-flex-wrap: $wrap;
+  -webkit-flex-direction: $direction;
+  -webkit-flex-wrap: $wrap;
+  display: flex;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  flex-direction: $direction;
+  flex-wrap: $wrap;
+}
+
+@mixin size($width, $height) {
+  width: $width;
+  height: $height;
+}

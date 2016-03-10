@@ -1,0 +1,56 @@
+.b-layout {
+  .img-thank-bot {
+    width: 100%;
+  }
+
+  .layout-element-left,
+  .layout-element-right {
+    display: none;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .b-layout {
+    @include flex-flow(row, wrap);
+
+    .img-city-name {
+      width: 10px;
+    }
+
+    .img-left-text{
+      margin-bottom: 72px;
+    }
+
+    .img-right-text {
+      margin-bottom: 72px;
+    }
+
+    .layout-element-left,
+    .layout-element-right {
+      display: block;
+      margin-bottom: 84px;
+      width: 12%;
+    }
+
+    .layout-element-left {
+      padding-top: 42px;
+    }
+
+    .layout-element-right {
+      padding-top: 36px;
+    }
+
+    .layout-element-middle {
+      padding: 0 6%;
+      width: 64%;
+    }
+  }
+}
+
+@media only screen and (min-width: 1278px) {
+  .b-layout {
+    .img-city-name {
+      width: 20px;
+    }
+  }
+}
