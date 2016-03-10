@@ -8,7 +8,29 @@
   }
 }
 
+.post-tweet-btn {
+  @include size(200px, 70px);
+  background: url('/images/tweet-post-btn.png') no-repeat;
+  background-size: contain;
+  border: none;
+  display: block;
+  margin: 20px auto 0;
+
+  &:hover {
+    @include filter(brightness(70%));
+  }
+}
+
 @media only screen and (min-width: 768px) {
+  .post-tweet-btn {
+    @include size(91.5%, 7vw);
+    background: url('/images/tweet-post-arrow-btn.png') no-repeat;
+    background-size: contain;
+    bottom: 0;
+    margin-top: 8px;
+    position: absolute;
+  }
+
   .twitter-follow-btn {
     margin: 0;
   }

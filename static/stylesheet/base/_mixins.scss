@@ -20,6 +20,11 @@
   flex-wrap: $wrap;
 }
 
+@mixin font($size, $line-heigth) {
+  font-size: $size;
+  line-height: $line-heigth;
+}
+
 @mixin size($width, $height) {
   width: $width;
   height: $height;
