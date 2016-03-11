@@ -26,7 +26,7 @@ func minimalUser(input anaconda.User) userData {
 }
 
 func minimalUsers(input []anaconda.User) []userData {
-	ret := make([]userData, len(input), len(input))
+	ret := make([]userData, len(input))
 	for i, el := range input {
 		ret[i] = minimalUser(el)
 	}
