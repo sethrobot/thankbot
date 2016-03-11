@@ -2,7 +2,7 @@
   padding: 35px 0;
 
   .img-landing-text {
-    height: 6.5vw;
+    height: 7.5vw;
     margin-bottom: 40px;
   }
 
@@ -59,7 +59,7 @@
     }
 
     .img-landing-text {
-      @include size(80%, 42px);
+      @include size(100%, 42px);
       margin-bottom: 66px;
     }
 

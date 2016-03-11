@@ -1,4 +1,4 @@
-var source = $("#result").html();
+var source = $("#landing").html();
 var template = Handlebars.compile(source);
 
 $("#dynamic-content").html(template);
