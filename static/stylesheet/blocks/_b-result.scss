@@ -3,7 +3,6 @@
   font-family: 'Cultivated-Mind', sans-serif;
   margin: 0 auto;
   padding-top: 15px;
-  width: 80%;
 
   .img-thanks {
     border: 3px solid $white;
@@ -20,10 +19,9 @@
 @media only screen and (min-width: 768px) {
   .b-result {
     @include flex-flow(row-reverse, wrap);
-    width: 100%;
 
     .img-thanks {
-      @include size(50.5%, 50.5%);
+      @include size(57.5%, 50.5%);
     }
 
     .img-result {
@@ -34,6 +32,14 @@
       font-size: 12px;
       margin-bottom: 1.4vw;
       padding: 8px 0;
+    }
+  }
+}
+
+@media only screen and (min-width: 1278px) {
+  .b-result {
+    .img-result {
+      width: 100%;
     }
   }
 }

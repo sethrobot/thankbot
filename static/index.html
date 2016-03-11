@@ -18,7 +18,7 @@
         <header>
           <img class='img-thank-bot' src='/images/thank-bot.png' alt='thank-bot'>
         </header>
-        <article id='dynamic-content'></article>
+        <article id='dynamic-content' class='b-dynamic-content'></article>
       </section>
 
       <aside class='layout-element-right'>
@@ -63,6 +63,24 @@
           <button class='post-tweet-btn'></button>
         </form>
         <img class='img-thanks' src='/images/thanks.png' alt='thanks'>
+      </div>
+    </script>
+
+    <script id='error-followers' type='text/x-handlebars-template'>
+      <div class='b-error'>
+        <img class='img-sorry' src='/images/sorry.png' alt='sorry'>
+        Unfortunately you are too cool to use this right now.
+        <br>
+        -
+        <br>
+        You have 75,000 followers
+      </div>
+    </script>
+
+    <script id='error-api' type='text/x-handlebars-template'>
+      <div class='b-error'>
+        <img class='img-sorry' src='/images/sorry.png' alt='sorry'>
+        An unknown error has occurred, try&nbsp;again later.
       </div>
     </script>
 
