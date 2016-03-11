@@ -1,0 +1,39 @@
+.b-result {
+  color: $dark-gray;
+  font-family: 'Cultivated-Mind', sans-serif;
+  margin: 0 auto;
+  padding-top: 15px;
+  width: 80%;
+
+  .img-thanks {
+    border: 3px solid $white;
+  }
+
+  .result-text {
+    border-bottom: 1px solid $dark-gray;
+    margin-bottom: 14px;
+    padding: 3vw 0;
+    text-align: center;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .b-result {
+    @include flex-flow(row-reverse, wrap);
+    width: 100%;
+
+    .img-thanks {
+      @include size(50.5%, 50.5%);
+    }
+
+    .img-result {
+      width: 78%;
+    }
+
+    .result-text {
+      font-size: 12px;
+      margin-bottom: 1.4vw;
+      padding: 8px 0;
+    }
+  }
+}
