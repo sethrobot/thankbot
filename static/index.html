@@ -28,77 +28,9 @@
 
     </div>
 
-    <script id='landing' type="text/x-handlebars-template">
-      <div class='b-landing'>
-        <img class='img-landing-text' src='/images/landing-text.png' alt='landing-text'>
-        <a class='btn sign-in-btn' href='/login'>
-          <img src='/images/sign-in.png' alt='sign-in'>
-        </a>
-        <div class='elements-container'>
-          <div class='element-right'>
-            <a class='btn twitter-follow-btn' href='#'>
-              <img src='/images/follow.png' alt='follow'>
-            </a>
-          </div>
-          <div class='element-left'>
-            <img class='logo' src='/images/logo.png' alt='logo'>
-          </div>
-        </div>
-      </div>
-    </script>
-
-    <script id='result' type='text/x-handlebars-template'>
-      <div class='b-result'>
-        <form class='b-form'>
-          <img class='img-result' src='/images/results.png' alt='result'>
-          <div class='result-text'>(select someone to thank)</div>
-          <input id='check1' class='input' type='radio' name='name' value='name' checked>
-          <label class='label' for='check1'>Name</label>
-          <br>
-          <input id='check2' class='input' type="radio" name='name'>
-          <label class='label' for='check2'>Name</label>
-          <br>
-          <input id='check3' class='input' type="radio" name='name'>
-          <label class='label' for='check3'>Name</label>
-          <button class='post-tweet-btn'></button>
-        </form>
-        <img class='img-thanks' src='/images/thanks.png' alt='thanks'>
-      </div>
-    </script>
-
-    <script id='error-followers' type='text/x-handlebars-template'>
-      <div class='b-info-box'>
-        <img class='img-sorry' src='/images/sorry.png' alt='sorry'>
-        Unfortunately you are too cool to use this right now.
-        <br>
-        -
-        <br>
-        You have 75,000+ followers
-      </div>
-    </script>
-
-    <script id='error-api' type='text/x-handlebars-template'>
-      <div class='b-info-box'>
-        <img class='img-sorry' src='/images/sorry.png' alt='sorry'>
-        An unknown error has occurred, try&nbsp;again later.
-      </div>
-    </script>
-
-    <script id='loading' type='text/x-handlebars-template'>
-      <img src='/images/bird.gif' alt='loading'>
-    </script>
-
-    <script id='thank-you' type='text/x-handlebars-template'>
-      <div class='b-info-box'>
-        <img class='img-thank-you' src='/images/thank-you.png' alt='thank you'>
-        for using ThankBot.
-        <br>
-        Your Tweet has been sent.
-      </div>
-    </script>
-
     <script type='text/javascript' src='/javascripts/lib/jquery.min.js'> </script>
     <script type='text/javascript' src='/javascripts/lib/handlebars.min.js'> </script>
+    <script type='text/javascript' src='/javascripts/templates/templates.js'> </script>
     <script type='text/javascript' src='/javascripts/app.js'> </script>
 
 

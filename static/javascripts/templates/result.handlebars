@@ -1,0 +1,13 @@
+<div class='b-result'>
+    <form class='b-form'>
+      <img class='img-result' src='/images/results.png' alt='result'>
+      <div class='result-text'>(select someone to thank)</div>
+      {{#each followers}}
+        <input id='{{screen_name}}' class='input' type='radio' name='name' checked>
+        <label class='label' for='{{screen_name}}'>{{screen_name}}</label>
+        <br>
+      {{/each}}
+      <button class='post-tweet-btn'></button>
+    </form>
+    <img class='img-thanks' src='/images/thanks.png' alt='thanks'>
+</div>
