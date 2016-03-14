@@ -5,6 +5,7 @@ import (
 	"log"
 	"net/http"
 	"os"
+	"flag"
 
 	"github.com/ChimeraCoder/anaconda"
 	"github.com/gorilla/mux"
@@ -21,6 +22,8 @@ var (
 			AccessTokenUrl:    "https://api.twitter.com/oauth/access_token",
 		},
 	)
+
+	devMode = flag.Bool("dev_mode", false, "Are you in Developmet mode?")
 )
 
 type fallibleHandler func(w http.ResponseWriter, r *http.Request) error
@@ -33,7 +36,23 @@ func catchError(fn fallibleHandler) http.HandlerFunc {
 	}
 }
 
+func redirectToHTTPS(w http.ResponseWriter, r *http.Request) {
+	r.URL.Scheme = "https"
+	http.Redirect(w, r, r.URL.String(), http.StatusMovedPermanently)
+}
+
+func startServer(r *mux.Router) error {
+	if *devMode {
+		return http.ListenAndServe(os.Getenv("SERVER_BINDING"), r)
+	}
+	httpMux := http.NewServeMux()
+	httpMux.HandleFunc("/", redirectToHTTPS)
+	go http.ListenAndServe(":80", httpMux)
+	return http.ListenAndServeTLS(os.Getenv("SERVER_BINDING"), "cert.pem", "cert.key", r)
+}
+
 func main() {
+	flag.Parse()
 	anaconda.SetConsumerKey(os.Getenv("TWITTER_KEY"))
 	anaconda.SetConsumerSecret(os.Getenv("TWITTER_SECRET"))
 	storage := SecureCookieStorage(
@@ -47,5 +66,5 @@ func main() {
 	r.HandleFunc("/followers", catchError(h.followers)).Methods("GET")
 	r.PathPrefix("/").Handler(http.FileServer(http.Dir("static"))).Methods("GET")
 	log.Printf("Listening on %s", os.Getenv("SERVER_BINDING"))
-	http.ListenAndServe(os.Getenv("SERVER_BINDING"), r)
+	startServer(r)
 }
