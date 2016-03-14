@@ -1,4 +1,4 @@
-.b-error {
+.b-info-box {
   @include font(7vw, 10vw);
   border: 3px solid $white;
   color: $white;
@@ -8,27 +8,36 @@
   text-transform: uppercase;
   text-align: center;
 
+  .img-thank-you,
   .img-sorry {
-    margin-bottom: 22%;
+    margin-bottom: 8vw;
     width: 90%;
   }
 }
 
 @media only screen and (min-width: 768px) {
-  .b-error {
-    @include font(3vw, 4.3vw);
+  .b-info-box {
+    @include font(26px, 36px);
     margin-top: 42px;
     padding: 35px 40px;
 
+    .img-thank-you,
     .img-sorry {
       margin-bottom: 8%;
       width: 42%;
+    }
+    .img-thank-you {
+      width: 65%;
     }
   }
 }
 
 @media only screen and (min-width: 1278px) {
-  .b-error {
+  .b-info-box {
     @include font(38px, 50px);
+
+    .img-thank-you {
+      width: 55%;
+    }
   }
 }
