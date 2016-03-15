@@ -29,10 +29,16 @@ type fallibleHandler func(w http.ResponseWriter, r *http.Request) error
 
 func catchError(fn fallibleHandler) http.HandlerFunc {
 	return func(w http.ResponseWriter, r *http.Request) {
-		if err := fn(w, r); err != nil {
-			log.Printf("Error for %q: %v", r.URL.String(), err)
-			http.Error(w, "Nope 🐮", http.StatusUnauthorized)
+		err := fn(w, r)
+		if err == nil {
+			return
 		}
+		if err == errNoTwitterAccess {
+			http.Error(w, "No access 🐦 🙀", http.StatusUnauthorized)
+			return
+		}
+		log.Printf("Error for %q: %v", r.URL.String(), err)
+		http.Error(w, "Kaboom 💣", http.StatusInternalServerError)
 	}
 }
 

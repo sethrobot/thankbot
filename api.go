@@ -37,7 +37,7 @@ func (a *api) earliestFollowers(count int) (*earliestFollowers, error) {
 	ret := new(earliestFollowers)
 	self, err := a.GetSelf(nil)
 	if err != nil {
-		return nil, err
+		return nil, errNoTwitterAccess
 	}
 	ret.Self = minimalUser(self)
 	if self.FollowersCount > maxAllowedFollowers {

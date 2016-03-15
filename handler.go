@@ -2,12 +2,15 @@ package main
 
 import (
 	"encoding/json"
+	"errors"
 	"fmt"
 	"net/http"
 
 	"github.com/ChimeraCoder/anaconda"
 	"github.com/mrjones/oauth"
 )
+
+var errNoTwitterAccess = errors.New("missing Twitter Access")
 
 type handler struct {
 	consumer *oauth.Consumer
@@ -55,7 +58,7 @@ func (h *handler) callback(w http.ResponseWriter, r *http.Request) error {
 func (h *handler) followers(w http.ResponseWriter, r *http.Request) error {
 	token, err := h.storage.GetAccessToken(r)
 	if err != nil {
-		return err
+		return errNoTwitterAccess
 	}
 	twitterAPI := &api{anaconda.NewTwitterApi(token.Token, token.Secret)}
 	response, err := twitterAPI.earliestFollowers(3)
