@@ -36,18 +36,21 @@ func catchError(fn fallibleHandler) http.HandlerFunc {
 	}
 }
 
-func redirectToHTTPS(w http.ResponseWriter, r *http.Request) {
-	r.URL.Scheme = "https"
-	http.Redirect(w, r, r.URL.String(), http.StatusMovedPermanently)
-}
-
 func startServer(r *mux.Router) error {
 	if *devMode {
 		return http.ListenAndServe(os.Getenv("SERVER_BINDING"), r)
 	}
-	httpMux := http.NewServeMux()
-	httpMux.HandleFunc("/", redirectToHTTPS)
-	go http.ListenAndServe(":80", httpMux)
+	go func() {
+		log.Fatal(
+			http.ListenAndServe(
+				":80",
+				http.RedirectHandler(
+					"https://thankbot.co",
+					http.StatusMovedPermanently,
+				),
+			),
+		)
+	}()
 	return http.ListenAndServeTLS(os.Getenv("SERVER_BINDING"), "cert.pem", "cert.key", r)
 }
 
