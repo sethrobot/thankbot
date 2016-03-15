@@ -1,11 +1,10 @@
 package main
 
 import (
-	"fmt"
+	"flag"
 	"log"
 	"net/http"
 	"os"
-	"flag"
 
 	"github.com/ChimeraCoder/anaconda"
 	"github.com/gorilla/mux"
@@ -31,7 +30,8 @@ type fallibleHandler func(w http.ResponseWriter, r *http.Request) error
 func catchError(fn fallibleHandler) http.HandlerFunc {
 	return func(w http.ResponseWriter, r *http.Request) {
 		if err := fn(w, r); err != nil {
-			fmt.Fprintf(w, "Error for %q: %v", r.URL.String(), err)
+			log.Printf("Error for %q: %v", r.URL.String(), err)
+			http.Error(w, "Nope 🐮", http.StatusUnauthorized)
 		}
 	}
 }
