@@ -12,11 +12,23 @@
         success: function (data) {
             var jsonData = JSON.parse(data);
             var templateData = {followers: jsonData.followers};
-            showTemplate('result', templateData);
+            var followersCount = jsonData.followers.length;
+
+            if (followersCount === 0) {
+                showTemplate('error-api');
+            } else if (followersCount > 75000) {
+                showTemplate('error-followers');
+            } else {
+                showTemplate('result', templateData);
+            }
         },
 
-        error: function () {
-            showTemplate('landing');
+        error: function (xhr) {
+            if (xhr.status === 401) {
+                showTemplate('landing');
+            } else {
+                showTemplate('error-api');
+            }
         }
     });
 
