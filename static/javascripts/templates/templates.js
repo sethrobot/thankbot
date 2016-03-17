@@ -5,7 +5,9 @@ templates['result'] = template({"1":function(container,depth0,helpers,partials,d
 
   return "        <input id='"
     + alias4(((helper = (helper = helpers.screen_name || (depth0 != null ? depth0.screen_name : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"screen_name","hash":{},"data":data}) : helper)))
-    + "' class='input' type='radio' name='name' checked>\n        <label class='label' for='"
+    + "' class='input' type='radio' value='"
+    + alias4(((helper = (helper = helpers.screen_name || (depth0 != null ? depth0.screen_name : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"screen_name","hash":{},"data":data}) : helper)))
+    + "' name='name' checked>\n        <label class='label' for='"
     + alias4(((helper = (helper = helpers.screen_name || (depth0 != null ? depth0.screen_name : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"screen_name","hash":{},"data":data}) : helper)))
     + "'>"
     + alias4(((helper = (helper = helpers.screen_name || (depth0 != null ? depth0.screen_name : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"screen_name","hash":{},"data":data}) : helper)))
@@ -15,7 +17,7 @@ templates['result'] = template({"1":function(container,depth0,helpers,partials,d
 
   return "<div class='b-result'>\n    <form class='b-form'>\n      <img class='img-result' src='/images/results.png' alt='result'>\n      <div class='result-text'>(select someone to thank)</div>\n"
     + ((stack1 = helpers.each.call(depth0 != null ? depth0 : {},(depth0 != null ? depth0.followers : depth0),{"name":"each","hash":{},"fn":container.program(1, data, 0),"inverse":container.noop,"data":data})) != null ? stack1 : "")
-    + "      <button class='post-tweet-btn'></button>\n    </form>\n    <img class='img-thanks' src='/images/thanks.png' alt='thanks'>\n</div>\n";
+    + "        <a class='twitter post-tweet-btn' href='http://twitter.com/share'></a>\n    </form>\n    <img class='img-thanks' src='/images/thanks.png' alt='thanks'>\n</div>\n";
 },"useData":true});
 templates['error-api'] = template({"compiler":[7,">= 4.0.0"],"main":function(container,depth0,helpers,partials,data) {
     return "<div class='b-info-box'>\n    <img class='img-sorry' src='/images/sorry.png' alt='sorry'>\n    An unknown error has occurred, try&nbsp;again later.\n</div>\n";

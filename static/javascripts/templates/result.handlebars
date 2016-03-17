@@ -3,11 +3,11 @@
       <img class='img-result' src='/images/results.png' alt='result'>
       <div class='result-text'>(select someone to thank)</div>
       {{#each followers}}
-        <input id='{{screen_name}}' class='input' type='radio' name='name' checked>
+        <input id='{{screen_name}}' class='input' type='radio' value='{{screen_name}}' name='name' checked>
         <label class='label' for='{{screen_name}}'>{{screen_name}}</label>
         <br>
       {{/each}}
-      <button class='post-tweet-btn'></button>
+        <a class='twitter post-tweet-btn' href='http://twitter.com/share'></a>
     </form>
     <img class='img-thanks' src='/images/thanks.png' alt='thanks'>
 </div>

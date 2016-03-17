@@ -4,6 +4,27 @@
         $("#dynamic-content").html(rendered);
     }
 
+    function postTweet() {
+        $('.post-tweet-btn').click(function() {
+            var radioValue = $('input:radio[name=name]:checked').val();
+
+            var width  = 575,
+                height = 400,
+                left   = ($(window).width()  - width)  / 2,
+                top    = ($(window).height() - height) / 2,
+                url    = this.href + '?text=@' + radioValue + '%20Thanks%20for%20being%20my%20first%20follower%20pic.twitter.com/32Prr3FTnm&url=empty',
+                opts   = 'status=1' +
+                    ',width='  + width  +
+                    ',height=' + height +
+                    ',top='    + top    +
+                    ',left='   + left;
+
+            window.open(url, 'twitter', opts);
+
+            return false;
+        });
+    }
+
     showTemplate('loading');
 
     $.ajax({
@@ -20,6 +41,7 @@
                 showTemplate('error-followers');
             } else {
                 showTemplate('result', templateData);
+                postTweet();
             }
         },
 
