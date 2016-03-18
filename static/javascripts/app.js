@@ -19,7 +19,20 @@
                     ',top='    + top    +
                     ',left='   + left;
 
-            window.open(url, 'twitter', opts);
+            var twitterWindow = window.open(url, 'twitter', opts);
+
+            var interval = window.setInterval(function() {
+                try {
+                    if (twitterWindow == null || twitterWindow.closed) {
+                        window.clearInterval(interval);
+                        showTemplate('thank-you');
+                    }
+                }
+                catch (e) {
+                    console.warn('Error has occured.');
+                    console.trace();
+                }
+            }, 1000);
 
             return false;
         });
