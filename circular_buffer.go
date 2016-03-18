@@ -1,9 +1,8 @@
 package main
 
 type circularBuffer struct {
-	buffer  []int64
-	pointer int
-	added   int
+	buffer []int64
+	added  int
 }
 
 func newCircularBuffer(size int) *circularBuffer {
@@ -11,14 +10,28 @@ func newCircularBuffer(size int) *circularBuffer {
 }
 
 func (b *circularBuffer) add(element int64) {
-	b.buffer[b.pointer] = element
-	b.pointer = (b.pointer + 1) % len(b.buffer)
+	b.buffer[b.pointer()] = element
 	b.added++
 }
 
+func (b *circularBuffer) pop() int64 {
+	b.added--
+	return b.buffer[b.pointer()]
+}
+
 func (b *circularBuffer) safeBuffer() []int64 {
-	if b.added < len(b.buffer) {
-		return b.buffer[0:b.added] // buffer not full
+	count := len(b.buffer)
+	addedTotal := b.added
+	if addedTotal < count {
+		count = b.added
 	}
-	return b.buffer
+	var ret []int64
+	for i := 0; i < addedTotal; i++ {
+		ret = append(ret, b.pop())
+	}
+	return ret
+}
+
+func (b *circularBuffer) pointer() int {
+	return b.added % len(b.buffer)
 }
