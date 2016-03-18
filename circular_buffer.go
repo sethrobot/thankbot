@@ -21,12 +21,11 @@ func (b *circularBuffer) pop() int64 {
 
 func (b *circularBuffer) safeBuffer() []int64 {
 	count := len(b.buffer)
-	addedTotal := b.added
-	if addedTotal < count {
+	if b.added < count {
 		count = b.added
 	}
 	var ret []int64
-	for i := 0; i < addedTotal; i++ {
+	for i := 0; i < count; i++ {
 		ret = append(ret, b.pop())
 	}
 	return ret
