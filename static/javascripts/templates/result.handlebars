@@ -4,7 +4,7 @@
       <div class='result-text'>(select someone to thank)</div>
       {{#each followers}}
         <input id='{{screen_name}}' class='input' type='radio' value='{{screen_name}}' name='name' checked>
-        <label class='label' for='{{screen_name}}'>{{screen_name}}</label>
+        <label class='label' for='{{screen_name}}'>{{indexNum @index}}. @{{screen_name}}</label>
         <br>
       {{/each}}
         <a class='twitter post-tweet-btn' href='http://twitter.com/share'></a>
