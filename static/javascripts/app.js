@@ -48,6 +48,10 @@
             var templateData = {followers: jsonData.followers};
             var followersCount = jsonData.followers.length;
 
+            Handlebars.registerHelper('indexNum', function(value) {
+                return parseInt(value) + 1;
+            });
+
             if (followersCount === 0) {
                 showTemplate('error-api');
             } else if (followersCount > 75000) {
