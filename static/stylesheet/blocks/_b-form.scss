@@ -9,7 +9,7 @@
     @include font(14px, 20px);
     cursor: pointer;
     display: inline-block;
-    margin: 0 15px 10px 0;
+    margin: 0 0 10px;
     position: relative;
     padding-left: 25px;
 
@@ -41,6 +41,7 @@
     width: 36%;
 
     .label {
+      @include font(12px, 20px);
       margin-bottom: 0.5vw;
     }
   }
