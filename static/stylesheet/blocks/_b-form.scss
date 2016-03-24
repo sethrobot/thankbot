@@ -1,5 +1,6 @@
 .b-form {
   margin-bottom: 48px;
+  position: relative;
 
   .input[type=radio] {
     display: none;
@@ -47,11 +48,19 @@
   }
 }
 
+@media only screen and (min-width: 997px) {
+  .b-form {
+    .label {
+      font-size: 15px;
+      padding-left: 30px;
+    }
+  }
+}
+
 @media only screen and (min-width: 1278px) {
   .b-form {
     .label {
       font-size: 18px;
-      padding-left: 30px;
     }
   }
 }

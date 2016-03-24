@@ -1,14 +1,25 @@
 .b-landing {
-  padding: 35px 0;
+  color: $white;
+  font-family: "Cultivated-Mind";
+  padding: 16px 0;
+  text-align: center;
 
-  .img-landing-text {
-    height: 7.5vw;
-    margin-bottom: 40px;
+  .info-text {
+    font-size: 4.5vw;
+    margin-bottom: 15px;
   }
 
   .logo {
-    @include size(86px, 96px);
+    @include size(36px, 41px);
     margin: 0 auto;
+  }
+
+  .main-text {
+    font-size: 7vw;
+
+    .orange {
+      color: $orange;
+    }
   }
 }
 
@@ -29,43 +40,87 @@
       width: 45%;
     }
 
-    .img-landing-text {
-      height: 32px;
-      margin-bottom: 19px;
+    .info-text {
+      font-size: 3vw;
     }
 
     .logo {
-      @include size(67px, 76px);
-      margin: 0 32px 0;
-      float: right;
+      float: left;
+    }
+
+    .main-text {
+      font-size: 4.6vw;
     }
   }
 }
 
-@media only screen and (min-width: 1278px) {
+
+
+@media only screen and (min-width: 997px) {
   .b-landing {
-    padding: 60px 0;
+    padding: 40px 0;
 
     .elements-container {
       width: 356px;
     }
 
     .element-right {
-      width: 57%;
+      width: 58%;
     }
 
     .element-left {
-      width: 43%;
+      width: 42%;
     }
 
-    .img-landing-text {
-      @include size(100%, 42px);
-      margin-bottom: 66px;
+    .info-text {
+      font-size: 28px;
+      margin-bottom: 20px;
     }
 
     .logo {
-      @include size(112px, 124px);
-      margin-right: 44px;
+      margin: 0 45px 0;
+    }
+
+    .main-text {
+      font-size: 48px;
+      line-height: 64px;
     }
   }
 }
+
+@media only screen and (min-width: 1282px) {
+  .b-landing {
+    padding: 60px 0;
+
+    .info-text {
+      font-size: 38px;
+      margin-bottom: 40px;
+    }
+
+    .element-right {
+      width: 70%;
+    }
+
+    .element-left {
+      width: 30%;
+    }
+
+    .img-city-name {
+      width: 20px;
+    }
+
+    .img-thank-bot {
+      width: 90%;
+    }
+
+    .logo {
+      margin: 0 22px 0;
+    }
+
+    .main-text {
+      font-size: 54px;
+      line-height: 74px;
+    }
+  }
+}
+
