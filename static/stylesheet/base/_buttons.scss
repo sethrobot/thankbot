@@ -1,7 +1,7 @@
 .btn {
   @include size(224px, 50px);
   display: block;
-  margin: 0 auto 25px;
+  margin: 0 auto;
 
   &:hover {
     @include filter(brightness(70%));
@@ -23,7 +23,7 @@
 
 @media only screen and (min-width: 768px) {
   .post-tweet-btn {
-    @include size(91.5%, 6vw);
+    @include size(91.5%, 5vw);
     background: url('/images/tweet-post-arrow-btn.png') no-repeat;
     background-size: contain;
     bottom: 0;
@@ -45,13 +45,36 @@
   }
 }
 
-@media only screen and (min-width: 1278px) {
+@media only screen and (min-width: 997px) {
+  .post-tweet-btn {
+    @include size(91.5%, 4vw);
+  }
+
   .sign-in-btn {
-    @include size(356px, 63px);
-    margin-bottom: 44px;
+    @include size(264px, 47px);
+    margin-bottom: 15px;
   }
 
   .twitter-follow-btn {
-    height: 40px;
+    @include size(77%, 32px);
+  }
+}
+
+@media only screen and (min-width: 1278px) {
+  .sign-in-btn {
+    @include size(298px, 53px);
+    margin-bottom: 20px;
+  }
+
+  .twitter-follow-btn {
+    width: 88%;
+  }
+}
+
+@media only screen and (min-width: 1400px) {
+  .post-tweet-btn {
+    bottom: 0;
+    height: 80px;
+    position: absolute;
   }
 }
