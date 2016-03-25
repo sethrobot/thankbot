@@ -57,8 +57,13 @@
             } else if (followersCount > 75000) {
                 showTemplate('error-followers');
             } else {
-                showTemplate('result', templateData);
-                postTweet();
+                function showResult() {
+                    showTemplate('result', templateData);
+                    var radioFirst = $('input:radio[name=name]')[0];
+                    radioFirst.checked = true;
+                    postTweet();
+                }
+                setTimeout(showResult, 8000);
             }
         },
 
