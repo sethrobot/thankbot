@@ -3,7 +3,7 @@
       <img class='img-result' src='/images/results.png' alt='result'>
       <div class='result-text'>(select someone to thank)</div>
       {{#each followers}}
-        <input id='{{screen_name}}' class='input' type='radio' value='{{screen_name}}' name='name' checked>
+        <input id='{{screen_name}}' class='input' type='radio' value='{{screen_name}}' name='name'>
         <label class='label' for='{{screen_name}}'>{{indexNum @index}}. @{{screen_name}}</label>
         <br>
       {{/each}}

@@ -7,7 +7,7 @@ templates['result'] = template({"1":function(container,depth0,helpers,partials,d
     + alias4(((helper = (helper = helpers.screen_name || (depth0 != null ? depth0.screen_name : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"screen_name","hash":{},"data":data}) : helper)))
     + "' class='input' type='radio' value='"
     + alias4(((helper = (helper = helpers.screen_name || (depth0 != null ? depth0.screen_name : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"screen_name","hash":{},"data":data}) : helper)))
-    + "' name='name' checked>\n        <label class='label' for='"
+    + "' name='name'>\n        <label class='label' for='"
     + alias4(((helper = (helper = helpers.screen_name || (depth0 != null ? depth0.screen_name : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"screen_name","hash":{},"data":data}) : helper)))
     + "'>"
     + alias4((helpers.indexNum || (depth0 && depth0.indexNum) || alias2).call(alias1,(data && data.index),{"name":"indexNum","hash":{},"data":data}))
