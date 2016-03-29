@@ -8,14 +8,14 @@
         $('.post-tweet-btn').click(function() {
             var radioValue = $('input:radio[name=name]:checked').val();
 
-            var text_shout_param = encodeURIComponent('?text=Shout out to @')
-            var for_what_you_thank_part = encodeURIComponent('for being my #FoundingFollower on twitter! (Thank yours at www.thankbot.co) pic.twitter.com/32Prr3FTnm&url=empty')
+            var text_shout_param = encodeURIComponent('Shout out to @');
+            var for_what_you_thank_part = encodeURIComponent('for being my #FoundingFollower on twitter! (Thank yours at www.thankbot.co) pic.twitter.com/32Prr3FTnm&url=empty');
 
             var width  = 575,
                 height = 400,
                 left   = ($(window).width()  - width)  / 2,
                 top    = ($(window).height() - height) / 2,
-                url    = this.href + text_shout_param + radioValue + for_what_you_thank_part,
+                url    = this.href + '?text=' text_shout_param + radioValue + for_what_you_thank_part,
                 opts   = 'status=1' +
                     ',width='  + width  +
                     ',height=' + height +
