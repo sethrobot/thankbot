@@ -12,7 +12,7 @@
                 height = 400,
                 left   = ($(window).width()  - width)  / 2,
                 top    = ($(window).height() - height) / 2,
-                url    = this.href + '?text=@' + radioValue + '%20Thanks%20for%20being%20my%20first%20follower%20pic.twitter.com/32Prr3FTnm&url=empty',
+                url    = this.href + '?text=Shout%20out%20to%20@' + radioValue + '%20for%20being%20my%20#FoundingFollower%20on%20twitter!%20(Thank%20yours%20at%20www.thankbot.co)%20pic.twitter.com/32Prr3FTnm&url=empty',
                 opts   = 'status=1' +
                     ',width='  + width  +
                     ',height=' + height +
