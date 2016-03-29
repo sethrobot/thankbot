@@ -15,7 +15,7 @@
                 height = 400,
                 left   = ($(window).width()  - width)  / 2,
                 top    = ($(window).height() - height) / 2,
-                url    = this.href + '?text=' text_shout_param + radioValue + for_what_you_thank_part,
+                url    = this.href + '?text=' + text_shout_param + radioValue + for_what_you_thank_part,
                 opts   = 'status=1' +
                     ',width='  + width  +
                     ',height=' + height +
